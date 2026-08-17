@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MYN 🐢</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1fff5;
+      color: #183b29;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(241,255,245,0.9);
+      backdrop-filter: blur(10px);
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #d4f0dd;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .logo span {
+      color: #48bd76;
+    }
+
+    nav a {
+      color: #183b29;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 70px 8%;
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .tag {
+      color: #35a966;
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(65px, 12vw, 130px);
+      line-height: .85;
+      margin: 20px 0;
+    }
+
+    h1 span {
+      color: #55c982;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #557363;
+      max-width: 580px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: bold;
+      background: white;
+      border: 1px solid #ccebd7;
+      color: #183b29;
+    }
+
+    .button.green {
+      background: #55c982;
+      border-color: #55c982;
+    }
+
+    .turtle {
+      font-size: 150px;
+      background: #dff8e8;
+      border-radius: 50px;
+      padding: 50px;
+      animation: float 3s ease-in-out infinite;
+      box-shadow: 0 20px 50px rgba(50,150,90,.15);
+    }
+
+    @keyframes float {
+      50% {
+        transform: translateY(-12px) rotate(2deg);
+      }
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 90px 7%;
+    }
+
+    .small-title {
+      color: #35a966;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: 50px;
+      margin: 8px 0 25px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #d4f0dd;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(30,100,60,.06);
+    }
+
+    .card p {
+      margin-bottom: 15px;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+      gap: 14px;
+    }
+
+    .game {
+      background: white;
+      border: 1px solid #d4f0dd;
+      border-radius: 18px;
+      padding: 22px;
+      font-weight: bold;
+      font-size: 18px;
+      transition: .2s;
+    }
+
+    .game:hover {
+      transform: translateY(-5px);
+      border-color: #55c982;
+    }
+
+    .socials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+      gap: 14px;
+    }
+
+    .social {
+      background: white;
+      border: 1px solid #d4f0dd;
+      padding: 20px;
+      border-radius: 18px;
+      text-decoration: none;
+      color: #183b29;
+      transition: .2s;
+    }
+
+    .social:hover {
+      transform: translateY(-5px);
+      border-color: #55c982;
+    }
+
+    .social small {
+      display: block;
+      color: #6a8373;
+      margin-top: 5px;
+    }
+
+    .goal {
+      background: #dff8e8;
+      border-radius: 30px;
+      text-align: center;
+    }
+
+    .goal-number {
+      font-size: 70px;
+      font-weight: 900;
+      color: #249653;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #6a8373;
+      border-top: 1px solid #d4f0dd;
+    }
+
+    @media(max-width:700px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 60px;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .turtle {
+        font-size: 100px;
+        padding: 35px;
+      }
+
+      nav div:last-child {
+        display: none;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">MYN <span>🐢</span></div>
+
+    <div>
+      <a href="#about">About</a>
+      <a href="#games">Games</a>
+      <a href="#socials">Socials</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+
+    <div class="hero-text">
+      <div class="tag">🎮 GAMING • 🌿 CHILL • 💬 CHAT</div>
+
+      <h1>Welcome to<br><span>MYN</span></h1>
+
+      <p>
+        Gaming, laughs, music, anime and good vibes.
+        Pull up, grab a seat, and stay awhile. 🐢💚
+      </p>
+
+      <div class="buttons">
+        <a class="button green" href="https://youtube.com/@myn_9909" target="_blank">
+          ▶ Watch YouTube
+        </a>
+
+        <a class="button" href="https://discord.gg/rYAWUfkSWv" target="_blank">
+          💬 Join Discord
+        </a>
+      </div>
+    </div>
+
+    <div class="turtle">
+      🐢
+    </div>
+
+  </div>
+
+  <section id="about">
+
+    <div class="small-title">ABOUT ME</div>
+
+    <h2>Meet MYN</h2>
+
+    <div class="card">
+
+      <p>
+        Hey, I’m <b>MYN</b>! I’m a gaming creator from the
+        <b>UAE 🇦🇪</b>. Minecraft is my favorite game, but I’m always
+        down to play different games, chill, chat, and have a good time.
+      </p>
+
+      <p>
+        I started streaming because I genuinely love gaming and I want
+        to show people what I can do while creating a place where
+        everyone feels welcome.
+      </p>
+
+      <p>
+        Outside of gaming, I’m into <b>anime, music, and occasionally
+        touching grass</b> 🌱😭.
+      </p>
+
+      <p>
+        🎯 <b>My goal:</b> Reach <b>1,000</b> followers/subscribers
+        and keep building this little community.
+      </p>
+
+      <p>
+        If you’re here, stay a while. Grab a seat, meet the turtles,
+        and enjoy the vibes. 🐢💚
+      </p>
+
+    </div>
+
+  </section>
+
+  <section id="games">
+
+    <div class="small-title">WHAT I PLAY</div>
+
+    <h2>Games 🎮</h2>
+
+    <div class="games">
+
+      <div class="game">⛏️ Minecraft</div>
+      <div class="game">🎯 Valorant</div>
+      <div class="game">🔫 CS</div>
+      <div class="game">🚗 Rocket League</div>
+      <div class="game">⚡ Krunker.io</div>
+      <div class="game">🧱 Roblox</div>
+      <div class="game">🏝️ Fortnite</div>
+
+    </div>
+
+  </section>
+
+  <section id="socials">
+
+    <div class="small-title">FIND ME ONLINE</div>
+
+    <h2>Socials 🔗</h2>
+
+    <div class="socials">
+
+      <a class="social" href="https://youtube.com/@myn_9909" target="_blank">
+        ▶ <b>YouTube</b>
+        <small>@myn_9909</small>
+      </a>
+
+      <a class="social" href="https://www.tiktok.com/@myn_9909" target="_blank">
+        ♪ <b>TikTok</b>
+        <small>@myn_9909</small>
+      </a>
+
+      <a class="social" href="https://www.twitch.tv/myn_9909" target="_blank">
+        ◉ <b>Twitch</b>
+        <small>@myn_9909</small>
+      </a>
+
+      <a class="social" href="https://kick.com/myn-9909" target="_blank">
+        ● <b>Kick</b>
+        <small>myn-9909</small>
+      </a>
+
+      <a class="social" href="https://discord.gg/rYAWUfkSWv" target="_blank">
+        💬 <b>Discord</b>
+        <small>MYN Community</small>
+      </a>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="goal">
+
+      <div class="small-title">THE MISSION</div>
+
+      <h2>Road to 1K 🎯</h2>
+
+      <p>One turtle at a time. Thanks for being part of the journey.</p>
+
+      <div class="goal-number">1K</div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    Made with 💚 by MYN 🐢 · Gaming • Chill • Chat
+  </footer>
+
+</body>
+</html>
