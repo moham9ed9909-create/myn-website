@@ -364,6 +364,30 @@
   <footer>
     Made with 💚 by MYN 🐢 · Gaming • Chill • Chat
   </footer>
+<section id="krunker-settings">
+  <div class="small-title">MY SETTINGS</div>
+  <h2>Krunker 🎯</h2>
 
+  <div class="card">
+    <p>Want my Krunker settings?</p>
+
+    <button class="button green" onclick="copyKrunkerSettings()">
+      📋 Copy MYN's Settings
+    </button>
+
+    <p id="copy-message"></p>
+  </div>
+</section>
+
+<script>
+function copyKrunkerSettings() {
+  const settings = `PASTE YOUR FULL KRUNKER SETTINGS HERE`;
+
+  navigator.clipboard.writeText(settings).then(() => {
+    document.getElementById("copy-message").textContent =
+      "✅ Settings copied!";
+  });
+}
+</script>
 </body>
 </html>
